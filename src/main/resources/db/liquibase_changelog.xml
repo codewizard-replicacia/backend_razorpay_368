@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <property name="schemaName" value="razorpay"></property>
+    <property name="author=" value="db-designer"></property>
+    <changeSet id="v1-01-01" author="${author}">
+    
+ <createTable schemaName="${schemaName}" tableName="Wallet_Payment">
+	<column name="pId" type="SERIAL" autoIncrement="true" >
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+     <column name="Id" type="VARCHAR(250)" />
+    
+     <column name="Entity" type="VARCHAR(250)" />
+    
+     <column name="Amount" type="BIGINT" />
+    
+     <column name="Currency" type="VARCHAR(250)" />
+    
+     <column name="Status" type="VARCHAR(250)" />
+    
+     <column name="Order_id" type="VARCHAR(250)" />
+    
+     <column name="Invoice_id" type="VARCHAR(250)" />
+    
+     <column name="International" type="VARCHAR(250)" />
+    
+     <column name="Method" type="VARCHAR(250)" />
+    
+     <column name="Amount_refunded" type="BIGINT" />
+    
+     <column name="Refund_status" type="VARCHAR(250)" />
+    
+     <column name="Captured" type="BOOLEAN" />
+    
+     <column name="Description" type="VARCHAR(250)" />
+    
+     <column name="Card_id" type="VARCHAR(250)" />
+    
+     <column name="Bank" type="VARCHAR(250)" />
+    
+     <column name="Wallet" type="VARCHAR(250)" />
+    
+     <column name="Vpa" type="VARCHAR(250)" />
+    
+     <column name="Email" type="VARCHAR(250)" />
+    
+     <column name="Contact" type="VARCHAR(250)" />
+    
+     <column name="Notes" type="VARCHAR(250)" />
+    
+     <column name="Fee" type="BIGINT" />
+    
+     <column name="Tax" type="BIGINT" />
+    
+     <column name="Error_code" type="VARCHAR(250)" />
+    
+     <column name="Error_description" type="VARCHAR(250)" />
+    
+     <column name="Error_source" type="VARCHAR(250)" />
+    
+     <column name="Error_step" type="VARCHAR(250)" />
+    
+     <column name="Error_reason" type="VARCHAR(250)" />
+    
+     <column name="Acquirer_data" type="VARCHAR(250)" />
+    
+     <column name="Created_at" type="BIGINT" />
+    
+ 	
+</createTable>
+ <createTable schemaName="${schemaName}" tableName="Upi_Payment">
+	<column name="pId" type="SERIAL" autoIncrement="true" >
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+     <column name="Id" type="VARCHAR(250)" />
+    
+     <column name="Entity" type="VARCHAR(250)" />
+    
+     <column name="Amount" type="BIGINT" />
+    
+     <column name="Currency" type="VARCHAR(250)" />
+    
+     <column name="Base_amount" type="VARCHAR(250)" />
+    
+     <column name="Status" type="VARCHAR(250)" />
+    
+     <column name="Order_id" type="VARCHAR(250)" />
+    
+     <column name="Invoice_id" type="VARCHAR(250)" />
+    
+     <column name="International" type="VARCHAR(250)" />
+    
+     <column name="Method" type="VARCHAR(250)" />
+    
+     <column name="Amount_refunded" type="BIGINT" />
+    
+     <column name="Amount_transferred" type="BIGINT" />
+    
+     <column name="Refund_status" type="VARCHAR(250)" />
+    
+     <column name="Captured" type="BOOLEAN" />
+    
+     <column name="Description" type="VARCHAR(250)" />
+    
+     <column name="Card_id" type="VARCHAR(250)" />
+    
+     <column name="Bank" type="VARCHAR(250)" />
+    
+     <column name="Wallet" type="VARCHAR(250)" />
+    
+     <column name="Vpa" type="VARCHAR(250)" />
+    
+     <column name="Email" type="VARCHAR(250)" />
+    
+     <column name="Contact" type="VARCHAR(250)" />
+    
+     <column name="Token_id" type="VARCHAR(250)" />
+    
+     <column name="Notes" type="VARCHAR(250)" />
+    
+     <column name="Fee" type="BIGINT" />
+    
+     <column name="Tax" type="BIGINT" />
+    
+     <column name="Error_code" type="VARCHAR(250)" />
+    
+     <column name="Error_description" type="VARCHAR(250)" />
+    
+     <column name="Error_source" type="VARCHAR(250)" />
+    
+     <column name="Error_step" type="VARCHAR(250)" />
+    
+     <column name="Error_reason" type="VARCHAR(250)" />
+    
+     <column name="Acquirer_data" type="VARCHAR(250)" />
+    
+     <column name="Created_at" type="BIGINT" />
+    
+  	<column name="Upi_Payer_account_type" type="VARCHAR(250)"/>
+	<column name="Upi_Vpa" type="VARCHAR(250)"/>
+	<column name="Upi_Flow" type="VARCHAR(250)"/>
+ 	
+</createTable>
+ <createTable schemaName="${schemaName}" tableName="Subscription">
+	<column name="sId" type="SERIAL" autoIncrement="true" >
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+     <column name="Id" type="VARCHAR(250)" />
+    
+     <column name="Entity" type="VARCHAR(250)" />
+    
+     <column name="Plan_id" type="VARCHAR(250)" />
+    
+     <column name="Customer_id" type="VARCHAR(250)" />
+    
+     <column name="Status" type="VARCHAR(250)" />
+    
+     <column name="Current_start" type="BIGINT" />
+    
+     <column name="Current_end" type="BIGINT" />
+    
+     <column name="Ended_at" type="BIGINT" />
+    
+     <column name="Quantity" type="INTEGER" />
+    
+     <column name="Notes" type="VARCHAR(250)" />
+    
+     <column name="Charge_at" type="BIGINT" />
+    
+     <column name="Start_at" type="BIGINT" />
+    
+     <column name="End_at" type="BIGINT" />
+    
+     <column name="Auth_attempts" type="INTEGER" />
+    
+     <column name="Total_count" type="INTEGER" />
+    
+     <column name="Paid_count" type="INTEGER" />
+    
+     <column name="Customer_notify" type="BOOLEAN" />
+    
+     <column name="Created_at" type="BIGINT" />
+    
+     <column name="Expire_by" type="BIGINT" />
+    
+     <column name="Short_url" type="VARCHAR(250)" />
+    
+     <column name="Has_scheduled_changes" type="BOOLEAN" />
+    
+     <column name="Change_scheduled_at" type="VARCHAR(250)" />
+    
+     <column name="Source" type="VARCHAR(250)" />
+    
+     <column name="Payment_method" type="VARCHAR(250)" />
+    
+     <column name="Offer_id" type="VARCHAR(250)" />
+    
+     <column name="Remaining_count" type="INTEGER" />
+    
+ 	
+</createTable>
+ <createTable schemaName="${schemaName}" tableName="Card_Payment">
+	<column name="pId" type="SERIAL" autoIncrement="true" >
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+     <column name="Id" type="VARCHAR(250)" />
+    
+     <column name="Entity" type="VARCHAR(250)" />
+    
+     <column name="Amount" type="BIGINT" />
+    
+     <column name="Currency" type="VARCHAR(250)" />
+    
+     <column name="Base_amount" type="VARCHAR(250)" />
+    
+     <column name="Status" type="VARCHAR(250)" />
+    
+     <column name="Order_id" type="VARCHAR(250)" />
+    
+     <column name="Invoice_id" type="VARCHAR(250)" />
+    
+     <column name="International" type="VARCHAR(250)" />
+    
+     <column name="Method" type="VARCHAR(250)" />
+    
+     <column name="Amount_refunded" type="BIGINT" />
+    
+     <column name="amount_transferred" type="BIGINT" />
+    
+     <column name="Refund_status" type="VARCHAR(250)" />
+    
+     <column name="Captured" type="BOOLEAN" />
+    
+     <column name="Description" type="VARCHAR(250)" />
+    
+     <column name="Card_id" type="VARCHAR(250)" />
+    
+  	<column name="Card_Emi" type="BOOLEAN"/>
+	<column name="Card_Entity" type="VARCHAR(250)"/>
+	<column name="Card_Id" type="VARCHAR(250)"/>
+	<column name="Card_Iin" type="VARCHAR(250)"/>
+	<column name="Card_International" type="BOOLEAN"/>
+	<column name="Card_Issuer" type="VARCHAR(250)"/>
+	<column name="Card_Last4" type="VARCHAR(250)"/>
+	<column name="Card_Name" type="VARCHAR(250)"/>
+	<column name="Card_Network" type="VARCHAR(250)"/>
+	<column name="Card_Sub_type" type="VARCHAR(250)"/>
+	<column name="Card_Type" type="VARCHAR(250)"/>
+     <column name="Bank" type="VARCHAR(250)" />
+    
+     <column name="Wallet" type="VARCHAR(250)" />
+    
+     <column name="Vpa" type="VARCHAR(250)" />
+    
+     <column name="Email" type="VARCHAR(250)" />
+    
+     <column name="Contact" type="VARCHAR(250)" />
+    
+     <column name="Customer_id" type="VARCHAR(250)" />
+    
+     <column name="Token_id" type="VARCHAR(250)" />
+    
+     <column name="Notes" type="VARCHAR(250)" />
+    
+     <column name="Fee" type="BIGINT" />
+    
+     <column name="Tax" type="BIGINT" />
+    
+     <column name="Error_code" type="VARCHAR(250)" />
+    
+     <column name="Error_description" type="VARCHAR(250)" />
+    
+     <column name="Error_source" type="VARCHAR(250)" />
+    
+     <column name="Error_step" type="VARCHAR(250)" />
+    
+     <column name="Error_reason" type="VARCHAR(250)" />
+    
+     <column name="Acquirer_data" type="VARCHAR(250)" />
+    
+     <column name="Created_at" type="VARCHAR(250)" />
+    
+ 	
+</createTable>
+ <createTable schemaName="${schemaName}" tableName="Netbanking_Payment">
+	<column name="pId" type="SERIAL" autoIncrement="true" >
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+     <column name="Id" type="VARCHAR(250)" />
+    
+     <column name="Entity" type="VARCHAR(250)" />
+    
+     <column name="Amount" type="BIGINT" />
+    
+     <column name="Currency" type="VARCHAR(250)" />
+    
+     <column name="Status" type="VARCHAR(250)" />
+    
+     <column name="Order_id" type="VARCHAR(250)" />
+    
+     <column name="Invoice_id" type="VARCHAR(250)" />
+    
+     <column name="International" type="VARCHAR(250)" />
+    
+     <column name="Method" type="VARCHAR(250)" />
+    
+     <column name="Amount_refunded" type="BIGINT" />
+    
+     <column name="Refund_status" type="VARCHAR(250)" />
+    
+     <column name="Captured" type="BOOLEAN" />
+    
+     <column name="Description" type="VARCHAR(250)" />
+    
+     <column name="Card_id" type="VARCHAR(250)" />
+    
+     <column name="Bank" type="VARCHAR(250)" />
+    
+     <column name="Wallet" type="VARCHAR(250)" />
+    
+     <column name="Vpa" type="VARCHAR(250)" />
+    
+     <column name="Email" type="VARCHAR(250)" />
+    
+     <column name="Contact" type="VARCHAR(250)" />
+    
+     <column name="Notes" type="VARCHAR(250)" />
+    
+     <column name="Fee" type="BIGINT" />
+    
+     <column name="Tax" type="BIGINT" />
+    
+     <column name="Error_code" type="VARCHAR(250)" />
+    
+     <column name="Error_description" type="VARCHAR(250)" />
+    
+     <column name="Error_source" type="VARCHAR(250)" />
+    
+     <column name="Error_step" type="VARCHAR(250)" />
+    
+     <column name="Error_reason" type="VARCHAR(250)" />
+    
+     <column name="Acquirer_data" type="VARCHAR(250)" />
+    
+     <column name="Created_at" type="BIGINT" />
+    
+ 	
+</createTable>
+	
+
+	
+ 
+ 
+ 
+ 
+ 
+	    </changeSet>
+</databaseChangeLog>
